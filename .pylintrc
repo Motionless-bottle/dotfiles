@@ -1,0 +1,10 @@
+[MASTER]
+# for import error
+init-hook="from pylint.config import find_pylintrc; import os, sys; sys.path.append(os.path.dirname(find_pylintrc()))"
+
+[MESSAGES CONTROL]
+disable=
+  W,       #for warnings
+  C,   #for docstring
+  #C0305,   # for trailing new lines
+  E0401, # for unable to import
