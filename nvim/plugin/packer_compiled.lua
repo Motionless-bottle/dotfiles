@@ -79,6 +79,12 @@ _G.packer_plugins = {
     path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["auto-save.nvim"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14auto-save\frequire\0" },
+    loaded = true,
+    path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
+    url = "https://github.com/Pocco81/auto-save.nvim"
+  },
   catppuccin = {
     loaded = true,
     path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -103,6 +109,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["comment.nvim"] = {
+    loaded = true,
+    path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/comment.nvim",
+    url = "https://github.com/numToStr/comment.nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -159,6 +170,12 @@ _G.packer_plugins = {
     path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-search-and-replace"] = {
+    config = { "\27LJ\2\nE\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\28nvim-search-and-replace\frequire\0" },
+    loaded = true,
+    path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/nvim-search-and-replace",
+    url = "https://github.com/s1n7ax/nvim-search-and-replace"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -201,6 +218,17 @@ _G.packer_plugins = {
     path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["toggleterm.nvim"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0" },
+    loaded = true,
+    path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["typescript.nvim"] = {
+    loaded = true,
+    path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/typescript.nvim",
+    url = "https://github.com/jose-elias-alvarez/typescript.nvim"
+  },
   ["vim-maximizer"] = {
     loaded = true,
     path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/vim-maximizer",
@@ -214,6 +242,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-search-and-replace
+time([[Config for nvim-search-and-replace]], true)
+try_loadstring("\27LJ\2\nE\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\28nvim-search-and-replace\frequire\0", "config", "nvim-search-and-replace")
+time([[Config for nvim-search-and-replace]], false)
+-- Config for: auto-save.nvim
+time([[Config for auto-save.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
+time([[Config for auto-save.nvim]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]

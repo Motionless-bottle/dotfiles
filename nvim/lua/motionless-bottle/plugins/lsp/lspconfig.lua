@@ -4,6 +4,12 @@ if not lspconfig_status then
   return
 end
 
+-- import typescript plugin safely
+local typescript_setup, typescript = pcall(require, "typescript")
+if not typescript_setup then
+  return
+end
+
 -- import cmp-nvim-lsp plugin safely
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
@@ -38,7 +44,50 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 
 lspconfig["pyright"].setup({
     capabilities = capabilities,
-    on_attach = on_attach
+    on_attach = on_attach,
+})
+
+lspconfig["rust_analyzer"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+
+  settings = {
+          ["rust-analyzer"] = {
+              imports = {
+                  granularity = {
+                      group = "module",
+                  },
+                  prefix = "self",
+              },
+              cargo = {
+                  buildScripts = {
+                      enable = true,
+                  },
+              },
+              procMacro = {
+                  enable = true
+              },
+          }
+      }
+})
+
+-- configure html server
+lspconfig["html"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig["astro"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+})
+
+-- configure typescript server with plugin
+typescript.setup({
+  server = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+  },
 })
 
 lspconfig["clangd"].setup({
@@ -54,7 +103,8 @@ lspconfig["sumneko_lua"].setup({
     Lua = {
       -- make the language server recognize "vim" global
       diagnostics = {
-        globals = { "vim" },
+        globals = { "vim", "love" },
+        disable = {"lowercase-global"},
       },
       workspace = {
         -- make language server aware of runtime files

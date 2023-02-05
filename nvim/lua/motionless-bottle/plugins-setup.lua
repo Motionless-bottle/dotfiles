@@ -19,10 +19,9 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-  
   -- plugins
   use 'wbthomason/packer.nvim'
-  
+
   -- lua functions that many plugins use
   use("nvim-lua/plenary.nvim")
 
@@ -34,16 +33,39 @@ return require('packer').startup(function(use)
   -- file explorer
   use("nvim-tree/nvim-tree.lua")
 
+  -- terminal
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup()
+  end}
   -- icons
   use("kyazdani42/nvim-web-devicons")
 
+  -- commenting with gc
+  use("numToStr/comment.nvim")
+
   -- status line
   use("nvim-lualine/lualine.nvim")
+
+  -- search and replace
+  use {
+      's1n7ax/nvim-search-and-replace',
+      config = function() require'nvim-search-and-replace'.setup() end,
+  }
 
   -- fuzzy finding w/ telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder- fuzzy finding
 
+  -- auto save
+  use({
+	  "Pocco81/auto-save.nvim",
+  	config = function()
+	  	 require("auto-save").setup {
+		  	-- your config goes here
+			  -- or just leave it empty :)
+  		 }
+	  end,
+  })
   -- autocompletion
   use("hrsh7th/nvim-cmp")
   use("hrsh7th/cmp-buffer")
@@ -61,6 +83,7 @@ return require('packer').startup(function(use)
   -- configuring lsp servers
   use("neovim/nvim-lspconfig") -- easily configure language servers
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
+  use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
   use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 

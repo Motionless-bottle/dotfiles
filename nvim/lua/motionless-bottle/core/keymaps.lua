@@ -18,6 +18,9 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 -- plugin keymaps
 
+-- toggle term
+-- keymap.set("n","<C-\\>",":ToggleTerm<CR>")
+
 -- vim-maximizer
 keymap.set("n","<leader>sm", ":MaximizerToggle<CR>")
 
