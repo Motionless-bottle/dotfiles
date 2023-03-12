@@ -20,7 +20,6 @@ mason.setup()
 
 mason_lspconfig.setup({
     ensure_installed = {
-    "sumneko_lua", -- lua server
     "pyright",
     "tsserver",
     }

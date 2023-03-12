@@ -96,8 +96,8 @@ lspconfig["clangd"].setup({
 })
 
 -- configure lua server (with special settings)
-lspconfig["sumneko_lua"].setup({
-  capabilities = capabilities,
+lspconfig["lua_ls"].setup({
+  capabiliies = capabilities,
   on_attach = on_attach,
   settings = { -- custom settings for lua
     Lua = {

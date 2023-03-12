@@ -6,5 +6,6 @@ init-hook="from pylint.config import find_pylintrc; import os, sys; sys.path.app
 disable=
   W,       #for warnings
   C,   #for docstring
+  R,   # for suggestions
   #C0305,   # for trailing new lines
   E0401, # for unable to import

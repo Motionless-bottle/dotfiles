@@ -3,14 +3,9 @@
 
 # Path to your oh-my-zsh installation.
 
+#neofetch
+
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$HOME/.emacs.d/bin:$PATH"
-
-# delete after cs50 course
-export CC="clang"
-export CFLAGS="-fsanitize=signed-integer-overflow -fsanitize=undefined -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow"
-export LDLIBS="-lcrypt -lcs50 -lm"
-
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
