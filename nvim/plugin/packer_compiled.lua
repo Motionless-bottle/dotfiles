@@ -120,6 +120,11 @@ _G.packer_plugins = {
     path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["godot.nvim"] = {
+    loaded = true,
+    path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/godot.nvim",
+    url = "https://github.com/lommix/godot.nvim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/home/motionless-bottle/.local/share/nvim/site/pack/packer/start/lspkind.nvim",

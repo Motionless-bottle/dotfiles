@@ -77,7 +77,10 @@ return require('packer').startup(function(use)
   use("rafamadriz/friendly-snippets") -- useful snippets
 
   -- managing & installing lsp servers
-  use("williamboman/mason.nvim")
+  use({"williamboman/mason.nvim",
+   run = ":MasonUpdate"})
+    
+    
   use("williamboman/mason-lspconfig.nvim")
 
   -- configuring lsp servers

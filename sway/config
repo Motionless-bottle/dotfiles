@@ -18,8 +18,14 @@ default_border pixel 1
 default_floating_border normal
 hide_edge_borders smart
 
-smart_gaps on
 gaps inner 7
+smart_gaps on
+
+# Screen shot
+bindsym Mod4+p       exec grimshot save active
+bindsym Mod4+Shift+p exec grimshot save area
+bindsym Mod4+Mod1+p  exec grimshot save output
+bindsym Mod4+Ctrl+p  exec grimshot save window
 
 ### Variables
 #
