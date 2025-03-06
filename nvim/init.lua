@@ -73,8 +73,7 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
-  -- Auto close brakets
-  "m4xshen/autoclose.nvim",
+
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -98,6 +97,18 @@ require('lazy').setup({
     },
   },
 
+  -- using lazy.nvim
+{
+  "S1M0N38/love2d.nvim",
+  cmd = "LoveRun",
+  opts = { },
+  keys = {
+    { "<leader>v", ft = "lua", desc = "LÖVE" },
+    { "<leader>vv", "<cmd>LoveRun<cr>", ft = "lua", desc = "Run LÖVE" },
+    { "<leader>vs", "<cmd>LoveStop<cr>", ft = "lua", desc = "Stop LÖVE" },
+  },
+},
+
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -115,6 +126,12 @@ require('lazy').setup({
           return 'make install_jsregexp'
         end)(),
       },
+
+    -- Auto close brakets
+      {"m4xshen/autoclose.nvim", opts = {
+      close = true,
+      }},
+
       'saadparwaiz1/cmp_luasnip',
 
       -- Adds LSP completion capabilities
@@ -204,13 +221,13 @@ require('lazy').setup({
   },
 
   {
-    "catppuccin/nvim",
+    "ellisonleao/gruvbox.nvim",
     opts = {
         -- custom options here
     },
     config = function(_, opts)
-        require("catppuccin").setup(opts) -- calling setup is optional
-        vim.cmd [[colorscheme catppuccin]]
+        require("gruvbox").setup(opts) -- calling setup is optional
+        vim.cmd [[colorscheme gruvbox]]
     end,
   },
 
@@ -682,6 +699,16 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'path' },
   },
+}
+
+require'lspconfig'.pyright.setup{
+settings = {
+    pyright = {
+      typeCheckingMode = "off"
+    }
+  }
+
+
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
